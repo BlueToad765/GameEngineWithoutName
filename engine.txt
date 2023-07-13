@@ -1,0 +1,84 @@
+//DOCUMENTATION FOR GEWN//
+//ENGINGE.py//
+
+//SIDENOTE//
+//THIS SAVE SYSTEM IS SUUUPER EASY TO CHEAT WITH, 
+  I CALL TO YOU TO CREATE A MOD MENU OR CHEAT APP//
+
+IMPORTS - 
+  image_load; loads images defuned in included image file
+  save; imports saving functions from included save file
+  fmod; used for creating a player multiplier
+  exit; use exit(0) instead of python's quit() function, as quit() doesn't work compiled
+  perf_counter; used in changing resolutions; see update_resolution() for more
+
+GROUP CLASS - 
+  litteraly just a superclassed list; added an update function to mass update sprites
+
+CURRENT RESOLUTION DECLARATION - 
+  declares the initial resolution; 450p to support small monitors
+
+RESOLUTIONS LIST - 
+  a bunch of resolutions, what did you expect?
+
+RESOLUTION BUTTONS LIST - 
+  a list collecting the resolution buttons from image_load.py
+
+  RES BUTTON COORDS LIST - 
+    list of each of coordinates for each button in RES_BTTN_LIST
+
+GAMESTATES DICTIONARY -
+  a list of gamestates
+
+GAMESTATE DECLARATION - 
+  decalres the initial gamestate; titlescreen by default
+
+WINDOW SETUP SECTION - 
+  SCREEN SIZE; set to current resolution
+  WIN_WID; width of current resolution
+  WIN_HIGH; height of current resolution
+  
+  CLOCK; pygame.time.clock; used for fps limit
+
+UPDATE RESOLUTION - 
+  UPDATES VALUES OF - 
+    current resolution
+    WIN_WID
+    WIN_HIGH
+  
+  resets the screen to be the selected resolution
+  displays a check box and "ok?" text, when clicked -
+    sets the resolution variables to the selected resolution, returns resolution
+  when not clicked - 
+    after 10 seconds it reverts to the old resolution
+  
+ERROR FUNCTION - 
+  takes in a line number
+  prints "error: line LineNum"
+
+INTEGER CHECKER FUNCTION - 
+  checks if item is an instance of int
+  if it is, returns int
+  if not, prints and error at the provided errorline
+
+PLAYER CLASS - 
+  Superclassed pygame.sprite.Sprite
+  all functions from that class still apply
+
+  takes in - 
+    image,
+    Xpos,
+    Ypos,
+    level,
+    mass,
+    effect_grav - 
+      a boolean value dedicated to whether gravity affects the player
+    
+  __INIT__ - 
+    creates self as pygame.sprite.Sprite
+    sets image and rect
+    
+    sets rect x and y position to the Xpos and Ypos variables
+    sets level, gravity, and mass according to the arg values
+
+    sets the default X and Y velocity to 0

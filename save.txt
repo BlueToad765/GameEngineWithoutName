@@ -1,0 +1,56 @@
+//DOCUMENTATION FOR GEWN//
+//save.py//
+
+
+
+BEFORE YOU CONTINUE PLEASE NOTE
+all save files must end with another empty line
+ex: {
+  DATA1
+  DATA2
+
+}
+
+
+
+SAVE RESOLUTION (Tuple)- 
+  intakes filename and current resolution
+
+  opens file, writes the resolution to two lines, closes file
+
+SAVE TIME - 
+  intakes filename, game tick, second, minute, and hour
+
+  opens file, writes each arg to it's own line, closes file
+
+LOAD TIME (returns list)-
+  list is setup [tick, seconds, minutes, hours]
+
+  intakes filename
+  opens file
+
+  loops through the lines in the file, adding each to the time list
+  closes file, returns time list
+
+READ SAVE - 
+  intakes filename
+  loops through each line in file, adds to list
+  closes file, returns list
+
+SAVEPLAYER - 
+  intakes filename, score, level
+  opens file
+  writes score and level
+  closes file
+
+LOADPLAYER (player)- 
+  USES INCLUDED PLAYER CLASS; see engine.txt for more
+  
+  intakes player, filename
+  
+  calls readsave for filename, assigned to a stat list
+  assigns the player score and level to the ones in the stat list
+
+CLEAR SAVE -
+  intakes filename
+    calls savePlayer to reset score and level to 0 and 1

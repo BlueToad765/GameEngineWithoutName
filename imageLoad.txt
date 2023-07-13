@@ -1,0 +1,18 @@
+//DOCUMENTATION FOR GEWN//
+//image_load.py//
+
+STARTUP RESOLUTION BUTTONS AND BACKGROUND - 
+  located in /assets/startup
+  a bunch of resolution buttons, a gray image, a check button, and a start button
+
+WIN_BTTN_LVL_UP BUTTONS - 
+  button images used initially for leveling up the player
+
+RESOLUTION SCREEN BUTTON - 
+  litteraly a button that says res
+
+BUTTON LOAD AND BUTTON SAVE - 
+  buttons that say save and load
+
+clear save button - 
+  button that says clear save
